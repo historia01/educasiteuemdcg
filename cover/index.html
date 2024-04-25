@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es" class="h-100" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>EDUCASITE</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script src="../assets/js/chartcontrol.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+    <script src="../assets/js/scripts.js"></script>
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <video autoplay muted loop id="myVideo" class="backgroundvideo">
+    <source src="../assets/media/ren.mp4" type="video/mp4">
+  </video>
+  <body class="d-flex h-100 text-center text-bg-dark" style="background-color: #141414 !important; box-shadow: inset 0 0 0px rgba(0, 0, 0, .5) !important ;">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <img src="../assets/media/logo/logo@0.25x.png" class="logoimage">
+      <hi class="pl-2">EDUCASITE</hi>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a id="buttonhome" class="nav-link fw-bold py-1 px-0 active cyclebutton3" aria-current="page" href="#">Inicio</a>
+        <a id="buttoncontent" class="nav-link fw-bold py-1 px-0 cyclebutton1" href="#">Contenido</a>
+        <a id="buttonabout" class="nav-link fw-bold py-1 px-0 cyclebutton2" href="#">Nosotros</a>
+        <a id="buttoncontact" class="nav-link fw-bold py-1 px-0 cyclebutton4" href="#">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <div class="debugButtons button" style="display: none;">
+    <button class="cyclebutton1">Cycle 1</button>
+    <button class="cyclebutton2">Cycle 2</button>
+    <button class="cyclebutton3">Cycle 3</button>
+    <button class="cyclebutton4">Cycle 4</button>
+  </div>
+  
+<!--Content-->
+  <main class="px-3">
+    <div class="startwindow" style="display: unset;">
+      <img src="../assets/media/logo/logo@2x.png" style="text-align: center; max-height: 160px;">
+      <h1>EDUCASITE<br>Plataforma Educativa</h1>
+      <p class="testtext lead">Somos una Plataforma Educativa con multitud de interesantes temas relacionados a la tecnología y la educación.</p>
+      <p class="lead">
+        <a href="#" class="cyclebutton1 btn btn-lg btn-light fw-bold border-white bg-white bouncy-button">Aprender más</a>
+      </p>
+    </div>
+    <!--Content-->
+    <div class="contentwindow" style="display: none;">
+      <h1>Nuestros temas favoritos:</h1>
+      <div class="accordion" id="accordionExample">
+         <!--1-->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Quimica - Química en la Computación
+              <img src="../assets/media/01.png" class="contentimages">
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Tabla Periodica Interactiva<br>
+              <img src="../assets/media/ptapp.png" class="contentimages"><br>
+              - Características -<br>
+              1. Muestra la tabla periodica con nombres, simbolo e otra informacion<br>
+              2. Al hacer click en un elemento muestra informacion de este, usos y compuestos<br>
+              Solo version de prueba disponible. 5 elementos disponibles.
+            </div>
+          </div>
+        </div>
+         <!--2-->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Materia 2 - titulo del tema
+              <img src="https://placehold.co/1280x720" class="contentimages">
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              placeholder
+             </div>
+          </div>
+        </div>
+         <!--3-->
+         <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+             materia 3 - titulo del tema
+             <img src="https://placehold.co/1280x720" class="contentimages">
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              placeholder
+             </div>
+          </div>
+        </div>
+         <!--4-->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Matemática - La Estadistica en las Redes Sociales
+              <img src="https://placehold.co/1280x720" class="contentimages">
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+             <h1>Uso de redes sociales en el mundo</h1><br>
+             <p>Las redes sociales son plataformas digitales que conectan a personas a través de la creación de perfiles, la conexión con otros, el intercambio de contenido y la interacción con este. Permiten mantenerse en contacto, conocer gente nueva, compartir intereses, promocionar negocios y encontrar información. Su impacto en la sociedad es significativo, y se ha vuelto una necesidad en la vida diaria de muchas personas, por eso vamos las estadísticas de uso de estas.</p>
+             <h1>Redes sociales mas usadas</h1>
+             <div class="infocontainer">
+              <table>
+                <caption style="text-align: center;">Redes Sociales más Usadas</caption> <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Cuota</th>
+                    <th>Usuarios</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Facebook</td>
+                    <td>66.23%</td>
+                    <td>5,820,591,841</td>
+                  </tr>
+                  <tr>
+                    <td>Instagram</td>
+                    <td>9.74%</td>
+                    <td>855,995,237</td>
+                  </tr>
+                  <tr>
+                    <td>Pinterest</td>
+                    <td>8.19%</td>
+                    <td>719,774,229</td>
+                  </tr>
+                  <tr>
+                    <td>Twitter</td>
+                    <td>7.28%</td>
+                    <td>639,799,315</td>
+                  </tr>
+                  <tr>
+                    <td>Reddit</td>
+                    <td>0.76%</td>
+                    <td>66,792,236</td>
+                  </tr>
+                  <tr>
+                    <td>Otros</td>
+                    <td>7.80%</td>
+                    <td>685,499,266</td>
+                  </tr>
+                </tbody>
+              </table>
+              <canvas id="mostUsedChart"></canvas>
+             </div>  
+              <p>Como podemos ver en estos datos, Facebook tiene una dominancia global en cuanto a redes sociales, además de eso que aquella en segundo lugar, Instagram, pertenece también a Facebook. Esto nos presenta con como una sola empresa tiene un monopolio en cuanto a la dominancia de la red.<br>La siguientes plataformas existen independientemente pero funcionan de manera diferente a las otras, algo que se puede observar es que ninguna de estas plataformas cumple el trabajo de la otra. Facebook es para compartir con amigos, Instagram para observar imágenes de gente alrededor del mundo, Pinterest es para compartir imágenes relacionadas al arte y diseño, Twitter es para compartir tus pensamientos al mundo, y Reddit sirve como un foro con una comunidad masiva en línea. </p>
+              <h1>Países que hacen mayor uso de las redes sociales</h1>
+              <div class="infocontainer">
+                <table>
+                  <caption>Percentage of Population</caption>
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Porcentaje de Población</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Emiratos Árabes Unidos</td>
+                      <td>105.50%</td>
+                    </tr>
+                    <tr>
+                      <td>Corea del Sur</td>
+                      <td>92.00%</td>
+                    </tr>
+                    <tr>
+                      <td>Hong Kong</td>
+                      <td>89.20%</td>
+                    </tr>
+                    <tr>
+                      <td>Países Bajos</td>
+                      <td>88.10%</td>
+                    </tr>
+                    <tr>
+                      <td>Canadá</td>
+                      <td>85.70%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <canvas id="countriesChart"></canvas>
+              </div>
+              <p>Los datos presentados nos muestran como las redes sociales han tomado el mundo, países como Emiratos Árabes Unidos que tienen más usuarios de redes sociales que población local, y los otros países que se encuentran cerca del 90%, lo cual es casi toda la población de aquellos países. Esto nos muestra la imagen de cuanto ha tomado las redes sociales nuestra vida.</p>
+              <h1>Crecimiento de Redes Sociales</h1>
+              <h2>Facebook 2023</h2>
+              <div class="infocontainer">
+                <table>
+                  <caption>Period</caption>
+                  <thead>
+                    <tr>
+                      <th style="padding-inline: 16px;">Periodo</th>
+                      <th style="padding-inline: 16px;">Tasa</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Q1</td>
+                      <td>0.17</td>
+                    </tr>
+                    <tr>
+                      <td>Q2</td>
+                      <td>0.88</td>
+                    </tr>
+                    <tr>
+                      <td>Q3</td>
+                      <td>1.37</td>
+                    </tr>
+                    <tr>
+                      <td>Q4</td>
+                      <td>1.16</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <canvas id="fbGrowth"></canvas>
+              </div>
+              <p>A pesar de dominar por casi dos decadas, Facebook sigue creciendo aunque no al mismo ritmo pero no se detiene.</p>
+              <h3>Algunos datos curiosos sobre las redes sociales</h3>
+              <ul>
+                <li><strong>El poder del #hashtag:</strong> El primer hashtag utilizado en Twitter fue #barcamp en 2007.</li>
+                <li><strong>Instagram y su amor por la comida:</strong> La comida es el tema más fotografiado en Instagram. ¡La pizza lidera las fotos más populares!</li>
+                <li><strong>Facebook y los nuevos amigos:</strong> En promedio, un usuario de Facebook tiene 338 amigos.</li> 
+                <li><strong>Velocidad de YouTube:</strong> Cada minuto se suben más de 500 horas de video a YouTube.</li>
+                <li><strong>El fenómeno de Tiktok:</strong> Tiktok alcanzó los mil millones de usuarios activos en un tiempo récord, más rápido que cualquier otra red social.</li>
+                <li><strong>Dominio femenino en Pinterest:</strong> Aproximadamente el 80% de los usuarios de Pinterest son mujeres.</li>
+                <li><strong>"Me gusta" masivo:</strong> El botón de "Me Gusta" en Facebook originalmente iba a llamarse  "Awesome" (Increíble).</li>
+              </ul>
+              <footer class="mt-auto text-white-50">
+                <h6>Fuentes</h6>
+                <p>StatCounter, Statistica</p>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of Content-->
+    <!--About-->
+    <div class="aboutwindow" style="display: none;">
+      <h1>¿Quienes Somos?</h1>
+      <h2 class="stroke">EDUCASITE: Educación gratuita para todos</h2>
+      <div class="textdivision lead">
+        <p>En las aulas de la UEMDCG, donde el conocimiento se fusiona con el espíritu emprendedor, nace EDUCASITE: una plataforma educativa gratuita que busca revolucionar el acceso al aprendizaje.</p>
+        <p>Inspirados por la convicción de que la educación es un derecho universal, un grupo de estudiantes ha dedicado horas sin fin a crear una plataforma intuitiva, atractiva y accesible para todos.</p>
+        <ul>
+            <li>EDUCASITE ofrecerá una amplia gama de cursos, desde materias básicas de secundaria hasta tecnología punta.</li>
+            <li>Utilizará recursos multimedia interactivos y una interfaz amigable para facilitar el aprendizaje.</li>
+            <li>Su objetivo es derribar las barreras económicas y democratizar el conocimiento.</li>
+            <li>Imaginan a estudiantes de todo el mundo aprendiendo a su propio ritmo, sin importar su ubicación o condición socioeconómica.</li>
+        </ul>
+        <p>Con pasión y determinación, estos estudiantes de la UEMDCG están dando sus primeros pasos para cambiar el mundo, un byte a la vez, y convertir EDUCASITE en la llave que abra las puertas del conocimiento a miles de jóvenes.</p>
+      </div>
+      <h2>Nuestro Equipo</h2>
+    </div>
+    <!--End of About-->
+    <!--Contact-->
+    <div class="contactwindow" style="display: none;">
+      <h1>Contacto</h1>
+      <div class="container" id="ff-compose"></div>
+      <div class="container" id="ff-compose"></div>
+<script async defer src="https://formfacade.com/include/118342389419780963351/form/1FAIpQLSds8DUZLXLJfdVGLd7ZZpse23B8id5bp8gvDX54Ax9IH9koIw/bootstrap.js?div=ff-compose"></script>
+    </div>
+    <!--End of Contact-->
+  </main>
+  
+  <footer class="mt-auto text-white-50">
+    <p>Derechos Reservados 2024</p>
+  </footer>
+</div>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    <img src="../assets/media/vignette.png" class="vignette">
+</html>
