@@ -137,7 +137,7 @@ th {
     -2px  0   0 #141414;
 }
 
-.stroke, p {
+.stroke {
   text-shadow:
     -2px -2px 0 #141414,
      0   -2px 0 #141414,
@@ -149,7 +149,7 @@ th {
     -2px  0   0 #141414;
 }
 
-.lightstroke, h1, h2 {
+.lightstroke {
   text-shadow:
     -2px -2px 0 #2c2c2c,
      0   -2px 0 #2c2c2c,
@@ -159,4 +159,27 @@ th {
      0    2px 0 #2c2c2c,
     -2px  2px 0 #2c2c2c,
     -2px  0   0 #2c2c2c;
+}
+
+.membersection {
+  display: grid;
+  grid-template-columns: 35% 65%; /* Two columns: 35% width and 65% width */
+  grid-template-rows: auto; /* Row height adjusts to content */
+}
+
+.infosection {
+  grid-column: 1; /* Occupy the first column */
+  text-align: start;
+}
+
+.biosection {
+  grid-column: 2; /* Occupy the second column */
+  text-align: justify;
+  padding-left: 2%;
+}
+
+.portraitPicture {
+  max-width: 100%;
+  border-radius: 3px;
+  border: #303030 solid 3px;
 }
