@@ -1,8 +1,10 @@
-var isOnAboutUs = false;
+var selector = 0;
+var temp1 = true;
 
 function testfunction(){
-    $('.startwindow').css("display", "none");
-    $('.contentwindow').css("display", "unset");
+    //$('.startwindow').css("display", "none");
+    $('.startwindow').fadeOut(500);
+    $('.contentwindow').delay(600).fadeIn(); 
     $('.aboutwindow').css("display", "none");
     $('.contactwindow').css("display", "none");
     $('#buttoncontent').addClass("active");
@@ -48,8 +50,42 @@ function contact(){
   console.log("success")
 };
 
+function fadeOutAll(){
+  $("#member1").fadeOut(500);
+  $("#member2").fadeOut(500);
+  $("#member3").fadeOut(500);
+  $("#member4").fadeOut(500);
+}
+
+function memberswitch(id){
+  switch(id){
+    case 0:
+      fadeOutAll();
+      $("#member1").delay(500).fadeIn();
+      break;
+    case 1:
+      fadeOutAll();
+      $("#member2").delay(500).fadeIn();
+      break;
+    case 2:
+      fadeOutAll();
+      $("#member3").delay(500).fadeIn();
+      break;
+    case 3:
+      fadeOutAll();
+      $("#member4").delay(500).fadeIn();
+      break;
+    default:
+      console.log("Error 1")
+  }  
+};
 
   $(document).ready(function(){
+    //ready actions
+    fadeOutAll()
+    $(".membersContainer").fadeOut();
+    
+    //click functions
     $(".cyclebutton1").click(function(){
       testfunction();
       isOnAboutUs = false;
@@ -71,18 +107,44 @@ function contact(){
       $("#myVideo").fadeIn();
     });
         
-    $(window).on('scroll', function() {
-      if ($(window).scrollTop() + $(window).height() >= $(document).height() - 5 && 
-          isOnAboutUs) { // Check if the user is on the About Us section
+    //other actions
 
-        // Your action here: reached the bottom (with tolerance) and isOnAboutUs is true
-        console.log("Bottom reached and the user is on the About Us section!");
-
-        // Example action (you might not need this if your action
-        // is independent of the About Us section being visible):
-        // isOnAboutUs = false; // Reset the flag 
-      }
+    $(document).ready(function() { 
+      $('#arrow1').click(function() {
+        $(".aboutUsBody").fadeOut(500);
+        $(".membersContainer").delay(500).fadeIn();
+        if(temp1){
+          memberswitch(selector);
+        }
+      });
+      $('#arrow2').click(function() {
+        $(".aboutUsBody").delay(500).fadeIn();
+        fadeOutAll()
+        $(".membersContainer").fadeOut(500);
+      });
+      $('#arrowL').click(function(){
+        if(selector <= 0){
+          selector = 3
+        } else {
+          selector = selector - 1
+        }
+        console.log(selector);
+        memberswitch(selector);
+      });
+      $('#arrowR').click(function(){
+        if(selector >= 3){
+          selector = 0
+        } else {
+          selector = selector + 1
+        }
+        console.log(selector);
+        memberswitch(selector);
+      });
+      
     });
+    
+    //
+    //      
 
   });
   
