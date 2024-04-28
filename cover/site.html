@@ -234,7 +234,7 @@
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
              Física - Velocidad de Carga de los Sitios Más Populares
-             <img src="https://placehold.co/1280x720" class="contentimages">
+             <img src="../assets/media/04.png" class="contentimages">
             </button>
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -367,7 +367,24 @@
               </div>
               <hr>
               <h1>Análisis</h1>
-              
+              <h3>Velocidad de Carga</h3>
+              <canvas id="loadtimechart"></canvas>
+              <p>Google toma el primer lugar en esta categoría, gracias a que ellos tienen servidores en cada país, esto ayuda a que el sitio cargue rápido. Segundo por no mucho es Wikipedia, esto gracias a que este sitio es mayormente texto e imágenes en páginas estáticas. De estos el resto de sitios pasan los 7 segundos gracias a que redes sociales usan algoritmos para cargar contenido lo que lleva mas tiempo que cargar contenido estático.</p>
+              <hr>
+              <h3>Tiempo y Tamaño de Paquetes</h3>
+              <div class="navContainer">
+                <div style="grid-column: 1; border-right: #141414;">
+                  <canvas id="packTime"></canvas>
+                </div>
+                <div style="grid-column: 2; border-left: #141414;">
+                  <canvas id="packSize"></canvas>
+                </div>
+              </div>
+              <p>El tiempo y tamaño de los paquetes son dos elementos que se relacionan porque es como el servidor envía datos, y como se ve en el siguiente gráfico las páginas que son más pesadas llevan más tiempo en paquete.</p>
+              <canvas id="pgsize"></canvas>
+              <hr>
+              <h1>Conclusion</h1>
+              <p>A pesar de esto, el tiempo de carga va a depender mucho de tu conexión a internet disponible, pero es interesante ver como los datos llegan tan rápido de otro lugar del continente hasta aquí en menos de 1 segundo, casi a la velocidad de la luz.</p>
             </div>
           </div>
         </div>
@@ -376,7 +393,7 @@
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               Matemática - La Estadistica en las Redes Sociales
-              <img src="https://placehold.co/1280x720" class="contentimages">
+              <img src="../assets/media/03.png" class="contentimages">
             </button>
           </h2>
           <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">

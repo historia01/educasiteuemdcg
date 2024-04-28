@@ -1,6 +1,10 @@
 let usageChart;
 let countryChart;
 let facebook;
+let speedchart;
+let pksize;
+let pktime;
+let pgsize;
 
 $(document).ready(function(){
     usageChart = new Chart("mostUsedChart", {
@@ -89,6 +93,133 @@ $(document).ready(function(){
             title: {
                 display: false,
                 text: ''
+            },
+            scales: {
+                y: {
+                  beginAtZero: true
+                }
+            }
+        }
+    });
+    speedchart = new Chart("loadtimechart", {
+        type: "bar",
+        data: {
+            labels: ["Google", "Facebook", "Youtube", "Amazon", "Wikipedia", "Instagram"],
+            datasets: [{
+                backgroundColor: [
+                    "#ffcf4d", "#4d82ff", "#ff4d4d", "#f7862a", "#787cff", "#ff78e4"
+                ],
+                data: [
+                    1.26, 7.71, 7.46, 7.66, 1.64, 14.64
+                ]
+            }]
+        },
+        options: {
+            legend: {
+                display: false,
+                labels:{
+                    fontFamily: 'PinkChicken',
+                    fontColor: 'white'
+                } 
+            },
+            title: {
+                display: false,
+                text: ''
+            },
+            scales: {
+                y: {
+                  beginAtZero: true
+                }
+            }
+        }
+    });
+
+    pktime = new Chart("packTime", {
+        type: "bar",
+        data: {
+            labels: ["Google", "Facebook", "Youtube", "Amazon", "Wikipedia", "Instagram"],
+            datasets: [{
+                backgroundColor: [
+                    "#ffcf4d", "#4d82ff", "#ff4d4d", "#f7862a", "#787cff", "#ff78e4"
+                ],
+                data: [
+                    90, 90, 196, 90, 30, 77
+                ]
+            }]
+        },
+        options: {
+            legend: {
+                display: false,
+                labels:{
+                    fontFamily: 'PinkChicken',
+                    fontColor: 'white'
+                } 
+            },
+            title: {
+                display: true,
+                text: 'Tamaño de Paquetes en Kilobytes'
+            },
+            scales: {
+                y: {
+                  beginAtZero: true
+                }
+            }
+        }
+    });
+    pksize = new Chart("packSize", {
+        type: "bar",
+        data: {
+            labels: ["Google", "Facebook", "Youtube", "Amazon", "Wikipedia", "Instagram"],
+            datasets: [{
+                backgroundColor: [
+                    "#ffcf4d", "#4d82ff", "#ff4d4d", "#f7862a", "#787cff", "#ff78e4"
+                ],
+                data: [
+                    50, 35, 80, 35, 26, 77
+                ]
+            }]
+        },
+        options: {
+            legend: {
+                display: false,
+                labels:{
+                    fontFamily: 'PinkChicken',
+                    fontColor: 'white'
+                } 
+            },
+            title: {
+                display: true,
+                text: 'Tiempo en el que Llega el Paquete en Milisegundos'
+            },
+            scales: {
+                y: {
+                  beginAtZero: true
+                }
+            }
+        }
+    });
+    pgsize = new Chart("pgsize", {
+        type: "bar",
+        data: {
+            labels: ["Google", "Facebook", "Youtube", "Amazon", "Wikipedia", "Instagram"],
+            datasets: [{
+                backgroundColor: [
+                    "#ffcf4d", "#4d82ff", "#ff4d4d", "#f7862a", "#787cff", "#ff78e4"
+                ],
+                data: [2.15, 19.72, 17.72, 7.05, 14.63]
+            }]
+        },
+        options: {
+            legend: {
+                display: false,
+                labels:{
+                    fontFamily: 'PinkChicken',
+                    fontColor: 'white'
+                } 
+            },
+            title: {
+                display: true,
+                text: 'Tamaño de las páginas en Megabytes'
             },
             scales: {
                 y: {
