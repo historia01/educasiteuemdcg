@@ -206,7 +206,7 @@ $(document).ready(function(){
                 backgroundColor: [
                     "#ffcf4d", "#4d82ff", "#ff4d4d", "#f7862a", "#787cff", "#ff78e4"
                 ],
-                data: [2.15, 19.72, 17.72, 7.05, 14.63]
+                data: [2.15, 19.72, 17.72, 7.05, 1.06, 14.63]
             }]
         },
         options: {
