@@ -1,4 +1,5 @@
 var selector = 0;
+var cselector = 0;
 var temp1 = true;
 
 function testfunction(){
@@ -57,11 +58,51 @@ function fadeOutAll(){
   $("#member4").fadeOut(500);
 }
 
+function fadeOutAllCards(){
+  $("#card1").fadeOut(500); 
+  $("#card5").fadeOut(500);
+  $("#card2").fadeOut(500);
+  $("#card3").fadeOut(500);
+  $("#card4").fadeOut(500);
+}
+
+function cardFadeSelector(card, pCard){
+  $(card).fadeOut(500);
+  $(pCard).fadeOut(500);
+}
+function cardSwitch(id){
+  switch(id){
+    case 0:
+      fadeOutAllCards();
+      $("#card1").delay(499).fadeIn();
+      break;
+    case 1:
+      fadeOutAllCards();
+      $("#card2").delay(499).fadeIn();
+      break;
+    case 2:
+      fadeOutAllCards();
+      $("#card3").delay(499).fadeIn();
+      break;
+    case 3:
+      fadeOutAllCards();
+      $("#card4").delay(499).fadeIn();
+      break;
+      case 3:
+        fadeOutAllCards();
+        $("#card5").delay(499).fadeIn();
+        break;
+    default:
+      console.log("Error 1")
+  } 
+}
+
+
 function memberswitch(id){
   switch(id){
     case 0:
       fadeOutAll();
-      $("#member1").delay(500).fadeIn();
+      $("#member4").delay(500).fadeIn();
       break;
     case 1:
       fadeOutAll();
@@ -73,7 +114,7 @@ function memberswitch(id){
       break;
     case 3:
       fadeOutAll();
-      $("#member4").delay(500).fadeIn();
+      $("#member1").delay(500).fadeIn();
       break;
     default:
       console.log("Error 1")
@@ -82,8 +123,10 @@ function memberswitch(id){
 
   $(document).ready(function(){
     //ready actions
-    fadeOutAll()
+    fadeOutAll();
+    fadeOutAllCards();
     $(".membersContainer").fadeOut();
+    $("#card1").fadeIn();
     
     //click functions
     $(".cyclebutton1").click(function(){
@@ -139,6 +182,25 @@ function memberswitch(id){
         }
         console.log(selector);
         memberswitch(selector);
+      });
+
+      $('#arrowCL').click(function(){
+        if(cselector <= 0){
+          cselector = 4
+        } else {
+          cselector = cselector - 1
+        }
+        console.log(cselector);
+        cardSwitch(cselector);
+      });
+      $('#arrowCR').click(function(){
+        if(cselector >= 4){
+          cselector = 0
+        } else {
+          cselector = cselector + 1
+        }
+        console.log(cselector);
+        cardSwitch(cselector);
       });
       
     });
