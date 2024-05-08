@@ -202,7 +202,7 @@ function memberswitch(id){
         console.log(cselector);
         cardSwitch(cselector);
       });
-      
+
     });
     
     //
