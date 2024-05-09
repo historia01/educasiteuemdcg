@@ -88,10 +88,6 @@ function cardSwitch(id){
       fadeOutAllCards();
       $("#card4").delay(499).fadeIn();
       break;
-      case 3:
-        fadeOutAllCards();
-        $("#card5").delay(499).fadeIn();
-        break;
     default:
       console.log("Error 1")
   } 
@@ -186,7 +182,7 @@ function memberswitch(id){
 
       $('#arrowCL').click(function(){
         if(cselector <= 0){
-          cselector = 4
+          cselector = 3
         } else {
           cselector = cselector - 1
         }
@@ -194,7 +190,7 @@ function memberswitch(id){
         cardSwitch(cselector);
       });
       $('#arrowCR').click(function(){
-        if(cselector >= 4){
+        if(cselector >= 3){
           cselector = 0
         } else {
           cselector = cselector + 1
